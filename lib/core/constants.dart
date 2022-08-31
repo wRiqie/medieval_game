@@ -1,6 +1,7 @@
 class Constants {
   static double get tileSize => 32;
-  static String get map => 'map/map.json';
+  static String get worldMap => 'map/world_map/map.json';
+  static String get villageMap => 'map/village/village.json';
 
   // Player
   static String get playerIdleLeft => 'knight_idle_left.png';

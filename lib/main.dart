@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:medieval_game/game/levels/first.dart';
+import 'package:flutter/services.dart';
+import 'package:medieval_game/game/levels/village.dart';
+import 'package:medieval_game/game/levels/world_map.dart';
+import 'package:flame_audio/flame_audio.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  FlameAudio.bgm.initialize();
+  SystemChrome.setPreferredOrientations(
+          [DeviceOrientation.landscapeLeft, DeviceOrientation.landscapeRight])
+      .then((_) {
+    runApp(const MyApp());
+  });
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: First(),
+      home: Village(),
     );
   }
 }

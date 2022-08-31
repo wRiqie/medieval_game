@@ -3,9 +3,9 @@ import 'package:medieval_game/core/constants.dart';
 import 'package:medieval_game/game/player/knight/knight_sprite.dart';
 
 class KnightPlayer extends SimplePlayer with ObjectCollision {
-  KnightPlayer()
+  KnightPlayer({required Vector2 position})
       : super(
-          position: Vector2(Constants.tileSize * 9, Constants.tileSize * 9),
+          position: position,
           size: Vector2(
             Constants.tileSize,
             Constants.tileSize,

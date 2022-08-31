@@ -3,26 +3,27 @@ import 'package:flutter/material.dart';
 import 'package:medieval_game/core/constants.dart';
 import 'package:medieval_game/game/player/knight/knight_player.dart';
 
-class First extends StatefulWidget {
-  const First({Key? key}) : super(key: key);
+class Village extends StatefulWidget {
+  const Village({Key? key}) : super(key: key);
 
   @override
-  State<First> createState() => _FirstState();
+  State<Village> createState() => _VillageState();
 }
 
-class _FirstState extends State<First> {
+class _VillageState extends State<Village> {
   @override
   Widget build(BuildContext context) {
     return BonfireWidget(
       map: WorldMapByTiled(
-        Constants.map,
-        forceTileSize: Vector2(Constants.tileSize, Constants.tileSize),
+        Constants.villageMap,
+        forceTileSize: Vector2(32, 32),
       ),
-      player: KnightPlayer(),
+      player: KnightPlayer(position: Vector2(Constants.tileSize * 12, Constants.tileSize * 24)),
       joystick: Joystick(
         keyboardConfig: KeyboardConfig(
           keyboardDirectionalType: KeyboardDirectionalType.wasdAndArrows,
         ),
+        directional: JoystickDirectional(),
       ),
     );
   }
