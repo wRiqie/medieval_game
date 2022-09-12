@@ -8,4 +8,8 @@ class Constants {
   static String get playerIdleRight => 'knight_idle.png';
   static String get playerRunLeft => 'knight_run_left.png';
   static String get playerRunRight => 'knight_run.png';
+
+  // Songs
+  static String get bg => 'bg.mp3';
+  static String get village => 'village.mp3';
 }
